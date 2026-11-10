@@ -480,6 +480,7 @@ myLocationBtn.addEventListener("click", async () => {
     }
   );
 });
+// new code
 
 clearAllBtn.addEventListener("click", () => {
   state.locations = [];
