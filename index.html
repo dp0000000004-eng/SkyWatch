@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkyWatch - Weather Monitor</title>
+  <meta name="description" content="Track current weather for your favorite cities with SkyWatch.">
+  <meta name="theme-color" content="#080d1d">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="SkyWatch">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="bg-orb orb-one"></div>
+  <div class="bg-orb orb-two"></div>
+  <main class="app-shell">
+    <header class="hero">
+      <p class="eyebrow">Weather Monitoring</p>
+      <h1>SkyWatch Mode</h1>
+      <p class="subtitle">Add your city, track weather instantly, and get live updates in your preferred theme.</p>
+      <button type="button" id="install-app-btn" class="theme-toggle install-button" hidden>Install App</button>
+      <button type="button" id="theme-toggle-btn" class="theme-toggle">Switch Theme</button>
+    </header>
+
+    <section class="add-location panel">
+      <h2>Add Your Location</h2>
+      <form id="location-form">
+        <label for="location-input" class="visually-hidden">Location</label>
+        <input
+          id="location-input"
+          name="location"
+          type="text"
+          placeholder="Search city (e.g., Mumbai, London, New York)"
+          autocomplete="off"
+          required
+        >
+        <button type="submit">Add</button>
+        <button type="button" id="my-location-btn" class="ghost-btn">Use My Location</button>
+      </form>
+      <p id="form-message" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="grid">
+      <aside class="saved-locations panel">
+        <div class="panel-head">
+          <h2>Saved Locations</h2>
+          <button id="clear-all" class="ghost-btn" type="button">Clear All</button>
+        </div>
+        <ul id="location-list"></ul>
+      </aside>
+
+      <section class="weather-view panel" id="weather-view">
+        <div class="empty-state" id="empty-state">
+          <h3>No Location Selected</h3>
+          <p>Add a city and select it to view the current weather.</p>
+        </div>
+
+        <div class="weather-content hidden" id="weather-content">
+          <div class="weather-header">
+            <div>
+              <h3 id="city-name">City</h3>
+              <p id="local-time"></p>
+            </div>
+            <div class="weather-vibe">
+              <span class="sky-indicator" id="sky-indicator">Sun</span>
+              <span class="mood-indicator" id="mood-indicator">Mood</span>
+              <span class="weather-badge" id="weather-type">-</span>
+            </div>
+          </div>
+
+          <div class="temp-row">
+            <div class="main-temp">
+              <span id="temperature">--</span>
+              <small>deg C</small>
+            </div>
+            <p id="feels-like">Feels like -- deg C</p>
+            <p id="weather-note" class="weather-note">Condition update appears here.</p>
+            <p id="last-updated" class="last-updated">Last updated: --</p>
+          </div>
+
+          <div class="metrics" id="metrics"></div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
