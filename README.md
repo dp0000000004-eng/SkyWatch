@@ -131,10 +131,9 @@ After launching the app:
 
 ## Screenshots
 
-Add screenshots of the app here for better project presentation:
 
 ```md
-![SkyWatch Dashboard](assets/images/screenshot.png)
+![SkyWatch Dashboard](/screenshots/img1.png)
 ```
 
 ---
