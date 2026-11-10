@@ -76,10 +76,10 @@ SkyWatch/
 ├── index.html
 ├── style.css
 ├── script.js
-├── assets/
-│   ├── icons/
-│   ├── images/
-│   └── fonts/
+├── icons/
+│   ├── logo11.png
+│   ├── logo2.png
+│   └── logo3.pn
 ├── README.md
 └── LICENSE
 ```
